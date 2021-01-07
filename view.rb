@@ -20,13 +20,11 @@ class View
   end
 
   def print_win_result(who)
-    puts "***#{who} win this round!***"
-    play_again
+    puts "*** #{who} win this round! ***"
   end
 
   def print_draw_result
-    puts "***It's a draw!***"
-    play_again
+    puts "*** It's a draw! ***"
   end
 
   def invalid_input
@@ -42,10 +40,10 @@ class View
     puts ""
   end
 
-  private
-
-  def play_again
+  def display_score(score, player1, player2)
     puts ""
+    puts "SCORE: #{player1}: #{score[:player1]}  vs  #{player2}: #{score[:player2]}"
+    puts""
     puts "Let's go again!"
   end
 end

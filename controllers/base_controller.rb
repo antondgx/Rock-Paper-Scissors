@@ -11,11 +11,13 @@ class BaseController
 
     print `clear`
     if user_input == "m"
-      # end function and back to menu
+      # wipe score and go back to menu
+      @score[:player1] = 0
+      @score[:player2] = 0
     else
       if @input_mapping.keys.include?(user_input)
         animation_effect
-        print_result("You", converted_user_input, "AI", ai_input)
+        print_result("You", converted_user_input, "Computer", ai_input)
       else
         @view.invalid_input
       end
@@ -28,14 +30,16 @@ class BaseController
 
     print `clear`
     if user_input == "m"
-      # end function and back to menu
+      # wipe score and go back to menu
+      @score[:player1] = 0
+      @score[:player2] = 0
     else
       if user_input == "1"
         animation_effect
         ai_1_input = @choices_arr.sample
         ai_2_input = @choices_arr.sample
 
-        print_result("AI 1", ai_1_input, "AI 2", ai_2_input)
+        print_result("AI-1", ai_1_input, "AI-2", ai_2_input)
       else
         @view.invalid_input
       end
@@ -51,11 +55,14 @@ class BaseController
     result << input1 << input2
     if @player1_win_condition.include?(result.join(" "))
       @view.print_win_result(player1)
+      @score[:player1] += 1
     elsif input1 == input2
       @view.print_draw_result
     else
       @view.print_win_result(player2)
+      @score[:player2] += 1
     end
+    @view.display_score(@score, player1, player2)
   end
 
   def animation_effect

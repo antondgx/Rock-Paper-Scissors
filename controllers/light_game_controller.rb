@@ -11,5 +11,11 @@ class LightGameController < BaseController
       "2" => "Paper",
       "3" => "Scissors"
     }
+
+    # for keeping score in a game. Score wipes when leave game.
+    @score = {
+      player1: 0,
+      player2: 0
+    }
   end
 end

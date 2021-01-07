@@ -13,5 +13,11 @@ class HeavyGameController < BaseController
       "4" => "Spock",
       "5" => "Lizard"
     }
+
+    # for keeping score in a game. Score wipes when leave game.
+    @score = {
+      player1: 0,
+      player2: 0
+    }
   end
 end
