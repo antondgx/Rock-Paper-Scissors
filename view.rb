@@ -1,13 +1,17 @@
 class View
-  def display_player_vs_ai
+  def player_vs_ai_menu(hash_item)
     puts "Choose an option!"
-    puts "q - Rock | w - Paper | e - Scissors | m - Menu"
+    menu = []
+    hash_item.each do |key, value|
+      menu << "#{key} - #{value}"
+    end
+    puts menu.join(" | ") + " | m - Menu"
     gets.chomp.to_s
   end
 
-  def display_ai_vs_ai
+  def ai_vs_ai_menu
     puts "Choose an option!"
-    puts "s - Start! | m - Menu"
+    puts "1 - Start! | m - Menu"
     gets.chomp.to_s
   end
 
@@ -30,13 +34,11 @@ class View
     puts ""
   end
 
-  def animation
-    puts "Rock.."
-    sleep(0.5)
-    puts "Paper..."
-    sleep(0.5)
-    puts "Scissors!!!"
-    sleep(0.5)
+  def animation(hash_item)
+    hash_item.each do |_key, value|
+      puts "#{value}!!"
+      sleep(0.3)
+    end
     puts ""
   end
 
