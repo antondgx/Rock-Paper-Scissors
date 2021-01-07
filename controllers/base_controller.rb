@@ -17,7 +17,7 @@ class BaseController
     else
       if @input_mapping.keys.include?(user_input)
         animation_effect
-        print_result("You", converted_user_input, "Computer", ai_input)
+        print_result("You", converted_user_input, "AI", ai_input)
       else
         @view.invalid_input
       end
