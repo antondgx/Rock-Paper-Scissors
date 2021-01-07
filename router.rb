@@ -69,7 +69,7 @@ class Router
   def display_game_options
     puts ""
     puts "Choose an option!"
-    puts "1 - You versus Computer!"
+    puts "1 - You versus AI!"
     puts "2 - Watch two AI robots battle it out!"
     puts "3 - Exit"
   end
