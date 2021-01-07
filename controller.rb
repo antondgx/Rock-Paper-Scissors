@@ -6,7 +6,6 @@ class Controller
 
     # Rock Paper Scissors mode
     @win_condition = ["Rock Scissors", "Paper Rock", "Scissors Paper"]
-    @draw_condition = ["Rock Rock", "Paper Paper", "Scissors Scissors"]
     @choices_arr = ["Rock", "Paper", "Scissors"]
     @input_conversion = {
       "q" => "Rock",
@@ -16,7 +15,6 @@ class Controller
 
     # App could be extended to Rock Paper Scissors Spock Lizard mode by uncommenting the below:
     # @win_condition = ["Rock Scissors", "Rock Lizard", "Paper Rock", "Paper Spock", "Scissors Paper", "Scissors Lizard", "Spock Rock", "Spock Scissors", "Lizard Spock", "Lizard Paper"]
-    # @draw_condition = ["Rock Rock", "Paper Paper", "Scissors Scissors", "Spock Spock", "Lizard Lizard"]
     # @choices_arr = ["Rock", "Paper", "Scissors", "Spock", "Lizard"]
     # @input_conversion = {
     #   "q" => "Rock",
@@ -74,7 +72,7 @@ class Controller
     result << input1 << input2
     if @win_condition.include?(result.join(" "))
       @view.print_win_result(player1)
-    elsif @draw_condition.include?(result.join(" "))
+    elsif input1 == input2
       @view.print_draw_result
     else
       @view.print_win_result(player2)
