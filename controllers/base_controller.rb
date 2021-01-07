@@ -1,28 +1,7 @@
-require_relative "view"
+require_relative "../view"
 
-class Controller
+class BaseController
   def initialize
-    @view = View.new
-
-    # Rock Paper Scissors mode
-    # @player1_win_condition = ["Rock Scissors", "Paper Rock", "Scissors Paper"]
-    # @choices_arr = ["Rock", "Paper", "Scissors"]
-    # @input_mapping = {
-    #   "1" => "Rock",
-    #   "2" => "Paper",
-    #   "3" => "Scissors"
-    # }
-
-    # Rock Paper Scissors Spock Lizard mode
-    @player1_win_condition = ["Rock Scissors", "Rock Lizard", "Paper Rock", "Paper Spock", "Scissors Paper", "Scissors Lizard", "Spock Rock", "Spock Scissors", "Lizard Spock", "Lizard Paper"]
-    @choices_arr = ["Rock", "Paper", "Scissors", "Spock", "Lizard"]
-    @input_mapping = {
-      "1" => "Rock",
-      "2" => "Paper",
-      "3" => "Scissors",
-      "4" => "Spock",
-      "5" => "Lizard"
-    }
   end
 
   def player_vs_ai
